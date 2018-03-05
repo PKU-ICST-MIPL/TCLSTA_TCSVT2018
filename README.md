@@ -17,7 +17,7 @@ It's recommended to use the [Christoph Feichtenhofer's toolkit](https://github.c
 
 ## Usage
 
-1. The training of spatial-temporal attention model.
+1. The training of spatial-temporal attention model. <\br>
 For the stable convergence of spatial-temporal attention model, we take the following training steps:
 
   1) Train ```Connection network``` and ```Spatial-level attention network``` jointly and get the spatial attention model.
