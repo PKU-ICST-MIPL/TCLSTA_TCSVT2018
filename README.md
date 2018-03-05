@@ -1,7 +1,7 @@
 ## Introduction
-    This is the source code of our TCSVT 2018 paper "Two-stream Collaborative Learning with Spatial-Temporal Attention for Video Classification", please cite the following paper if you use our code.
+    This is the source code of our TCSVT 2018 paper "[Two-stream Collaborative Learning with Spatial-Temporal Attention for Video Classification](http://59.108.48.34/tiki/download_paper.php?fileId=20187)", please cite the following paper if you use our code.
 
-    Yuxin Peng, Yunzhen Zhao, and Junchao Zhang, "Two-stream Collaborative Learning with Spatial-Temporal Attention for Video Classification", IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), DOI: 10.1109/TCSVT.2018.2808685, 2018.[【pdf】](http://59.108.48.34/tiki/download_paper.php?fileId=20187)
+    Yuxin Peng, Yunzhen Zhao, and Junchao Zhang, "Two-stream Collaborative Learning with Spatial-Temporal Attention for Video Classification", IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), DOI: 10.1109/TCSVT.2018.2808685, 2018.
 
 ## Dependency
 Our code is based on [Caffe](https://github.com/BVLC/caffe), all the dependencies are the same as Caffe. 
