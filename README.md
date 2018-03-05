@@ -19,8 +19,8 @@ It's recommended to use the [Christoph Feichtenhofer's toolkit](https://github.c
 
 1. The training of spatial-temporal attention model.<br/>
 For the stable convergence of spatial-temporal attention model, we take the following training steps:
->>1) Train ```Connection network``` and ```Spatial-level attention network``` jointly and get the spatial attention model.
-  2) Train ```Temporal-level attention network``` based on the obtained spatial attention model, with freezing the weights of ```Connection network``` and ```Spatial-level attention network```.
-  3) Train the spatial-temporal attention model jointly based on the obtained model by step 2).
+*Train ```Connection network``` and ```Spatial-level attention network``` jointly and get the spatial attention model.
+*Train ```Temporal-level attention network``` based on the obtained spatial attention model, with freezing the weights of ```Connection network``` and ```Spatial-level attention network```.
+*Train the spatial-temporal attention model jointly based on the obtained model by step 2).
 2. The training of static-motion collaborative model.
 3. Testing.
