@@ -4,7 +4,7 @@ This is the source code of our TCSVT 2018 paper "[Two-stream Collaborative Learn
     Yuxin Peng, Yunzhen Zhao, and Junchao Zhang, "Two-stream Collaborative Learning with Spatial-Temporal Attention for Video Classification", IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), DOI: 10.1109/TCSVT.2018.2808685, 2018.
 
 ## Dependency
-Our code is based on [Caffe](https://github.com/BVLC/caffe), all the dependencies are the same as Caffe. \<br>The provided caffe code `caffe-rc3-lstm/` is modified on the [rc3](https://github.com/BVLC/caffe/tree/rc3) version.
+Our code is based on [Caffe](https://github.com/BVLC/caffe), all the dependencies are the same as Caffe. The provided caffe code `caffe-rc3-lstm/` is modified on the [rc3](https://github.com/BVLC/caffe/tree/rc3) version.
 
 Note that for the implementation of the LSTM layer in ```caffe-rc3-lstm/```, please refer to [Junhyuk Oh's implementation](https://github.com/junhyukoh/caffe-lstm).
 
@@ -19,6 +19,7 @@ It's recommended to use the [Christoph Feichtenhofer's toolkit](https://github.c
 
 1. The training of spatial-temporal attention model.
 For the stable convergence of spatial-temporal attention model, we take the following training steps:
+
   1) Train ```Connection network``` and ```Spatial-level attention network``` jointly and get the spatial attention model.
   2) Train ```Temporal-level attention network``` based on the obtained spatial attention model, with freezing the weights of ```Connection network``` and ```Spatial-level attention network```.
   3) Train the spatial-temporal attention model jointly based on the obtained model by step 2).
