@@ -1,6 +1,3 @@
-# TCLSTA_TCSVT2018
-Source code of our TCSVT 2018 paper "Two-stream Collaborative Learning with Spatial-Temporal Attention for Video Classification".
-
 ## Introduction
 This is the source code of our TCSVT 2018 paper "Two-stream Collaborative Learning with Spatial-Temporal Attention for Video Classification", Please cite the following paper if you use our code.
 
