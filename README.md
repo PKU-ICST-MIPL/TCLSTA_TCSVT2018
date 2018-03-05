@@ -13,7 +13,7 @@ Note that for the implementation of the LSTM layer in ```caffe-rc3-lstm/```, ple
 The proposed TCLSTA also uses the Pre-trained ResNet-50 model with batch normalization, which can be downloaded at [Caffe model zoo](https://github.com/BVLC/caffe/wiki/Model-Zoo#imagenet-pre-trained-models-with-batch-normalization), download this model and put it in example/semihash/Pre_trained folder.
 
 ## Data Preparation
-Here we use [UCF101](http://crcv.ucf.edu/data/UCF101.php) dataset for an example, download the UCF101 dataset, and put the extracted frames and optical flow images in ```dataset/UCF101/UCF101_jpegs_256/``` and ```dataset/UCF101/UCF101_tvl1_flow/``` folders, respectively.
+Here we use [UCF101](http://crcv.ucf.edu/data/UCF101.php) dataset for an example, download the UCF101 dataset, and put the extracted frames and optical flow images in `dataset/UCF101/UCF101_jpegs_256/` and ```dataset/UCF101/UCF101_tvl1_flow/``` folders, respectively.
 
 It's recommended to use the [Christoph Feichtenhofer's toolkit](https://github.com/feichtenhofer/gpu_flow) to compute optical flow.
 
