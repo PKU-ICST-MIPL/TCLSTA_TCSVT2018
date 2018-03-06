@@ -1,0 +1,14 @@
+net: "./configure/resnet50_cvgj_train_test_spatial_temporal_frozen_sp01.prototxt"
+test_iter: 1000
+test_interval: 5000
+base_lr: 1e-3
+momentum: 0.9
+weight_decay: 0.0001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 10000
+display: 50
+max_iter: 30000
+snapshot: 5000
+snapshot_prefix: "models/resnet50_cvgj_spatial_temporal_frozen_sp01_s10_frame"
+solver_mode: GPU
