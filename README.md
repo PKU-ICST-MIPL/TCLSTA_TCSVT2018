@@ -42,5 +42,6 @@ First sample 25 frames and opical flow images for each video, then extract frame
         cd CollaborativeLearning/
         th trainTest.lua
 
+## Related Link
 Welcome to our [Laboratory Homepage](http://www.icst.pku.edu.cn/mipl) for more information about our papers, source codes, and datasets.
 
