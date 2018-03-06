@@ -34,7 +34,7 @@ For the stable convergence of spatial-temporal attention model, we take the foll
 
         sh train_resnet50_sp01_spatial_temporal.sh
 
-Note that spatial-temporal attention model on optical flow can be obtained by similar training steps.  
+  Note that spatial-temporal attention model on optical flow can be obtained by similar training steps.  
 
 2. The training of static-motion collaborative model.<br/>
 First sample 25 frames and opical flow images for each video, then extract frame and optical flow features using trained spatial-temporal attention models. Then excute the following command to train the static-motion collaborative model.
