@@ -6,9 +6,8 @@ local layer, parent = torch.class('nn.recursive_atten', 'nn.Module')
 function layer:__init(opt)
     parent.__init(self)
 
-    self.atten_encode = attention.recursive_atten(2048,2048,2048,51)
+    self.atten_encode = attention.recursive_atten(2048,2048,2048,101) -- 51 for HMDB51
 
-    -- self.atten_encode = attention.recursive_atten(512,512,512,1000) -- coco_qa
 end
 
 function layer:getModulesList()

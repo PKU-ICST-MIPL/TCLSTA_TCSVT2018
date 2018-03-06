@@ -19,10 +19,6 @@ cmd:text()
 cmd:text('Options')
 
 -- Data input settings
-cmd:option('-input_img_train_h5','data/vqa_data_img_vgg_train.h5','path to the h5file containing the image feature')
-cmd:option('-input_img_test_h5','data/vqa_data_img_vgg_test.h5','path to the h5file containing the image feature')
-cmd:option('-input_ques_h5','data/vqa_data_prepro.h5','path to the h5file containing the preprocessed dataset')
-cmd:option('-input_json','data/vqa_data_prepro.json','path to the json file containing additional info and vocab')
 
 cmd:option('-start_from', '', 'path to a model checkpoint to initialize model weights from. Empty = don\'t')
 cmd:option('-co_atten_type', 'Alternating', 'co_attention type. Parallel or Alternating, alternating trains more faster than parallel.')
@@ -49,7 +45,7 @@ cmd:option('-iterPerEpoch', 1200)
 
 -- Evaluation/Checkpointing
 cmd:option('-save_checkpoint_every', 6000, 'how often to save a model checkpoint?')
-cmd:option('-checkpoint_path', 'save/train_vgg', 'folder to save checkpoints into (empty = this folder)')
+cmd:option('-checkpoint_path', 'save/', 'folder to save checkpoints into (empty = this folder)')
 
 -- Visualization
 cmd:option('-losses_log_every', 10, 'How often do we save losses, for inclusion in the progress dump? (0 = disable)')
@@ -86,7 +82,7 @@ opt = cmd:parse(arg)
 -- Read feature data
 -------------------------------------------------------------------------------
 
-local spaTrainFeatureLabels = torch.load('/home/junchao/workspace/TCSVT2017/HMDB51/data/data_feat_train_RGB_centerCrop_25f_sp1.t7') 
+local spaTrainFeatureLabels = torch.load('data/ucf101_train01_frame_sp25_res50_cvgj_spatial_temporal_global_pool_nxdx25.t7') 
 local spaTrainData = spaTrainFeatureLabels.featMats
 local spaTrainTarget = spaTrainFeatureLabels.labels
 local spaTrain = torch.Tensor(spaTrainData:size(1),25,2048)
@@ -97,7 +93,7 @@ for pi = 1, spaTrainData:size(1) do
 end
 print(spaTrain:size())
 
-local tempTrainFeatureLabels = torch.load('/home/junchao/workspace/TCSVT2017/HMDB51/data/data_feat_train_FlowMap-TVL1-crop20_centerCrop_25f_sp1.t7')
+local tempTrainFeatureLabels = torch.load('data/ucf101_train01_optflow_sp25_res50_cvgj_spatial_temporal_global_pool_nxdx25.t7')
 local tempTrainData = tempTrainFeatureLabels.featMats
 local tempTrainTarget = tempTrainFeatureLabels.labels
 local tempTrain = torch.Tensor(tempTrainData:size(1),25,2048)
@@ -108,7 +104,7 @@ for pi = 1, tempTrainData:size(1) do
 end
 print(tempTrain:size())
 
-local spaTestFeatureLabels = torch.load('/home/junchao/workspace/TCSVT2017/HMDB51/data/data_feat_test_RGB_centerCrop_25f_sp1.t7') 
+local spaTestFeatureLabels = torch.load('data/ucf101_test01_frame_sp25_res50_cvgj_spatial_temporal_global_pool_nxdx25.t7') 
 local spaTestData = spaTestFeatureLabels.featMats
 local spaTestTarget = spaTestFeatureLabels.labels
 local spaTest = torch.Tensor(spaTestData:size(1),25,2048)
@@ -119,7 +115,7 @@ for pi = 1, spaTestData:size(1) do
 end
 print(spaTest:size())
 
-local tempTestFeatureLabels = torch.load('/home/junchao/workspace/TCSVT2017/HMDB51/data/data_feat_test_FlowMap-TVL1-crop20_centerCrop_25f_sp1.t7')
+local tempTestFeatureLabels = torch.load('data/ucf101_test01_frame_sp25_res50_cvgj_spatial_temporal_global_pool_nxdx25.t7')
 local tempTestData = tempTestFeatureLabels.featMats
 local tempTestTarget = tempTestFeatureLabels.labels
 local tempTest = torch.Tensor(tempTestData:size(1),25,2048)
@@ -279,7 +275,7 @@ local function lossFun(batch_size)
   --print(w_ques:size())
   --print(w_img:size())
   local feature_ensemble = {w_ques, w_img}
-  local out_feat = protos.atten:forward(feature_ensemble) --最后的分类
+  local out_feat = protos.atten:forward(feature_ensemble) --final classfication
 
   -- forward the language model criterion
   local loss = protos.crit:forward(out_feat, answer)
