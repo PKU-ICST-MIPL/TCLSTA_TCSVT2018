@@ -22,7 +22,8 @@ We show the training and testing steps on UCF101 split01 with single GPU for exa
 1. The training of spatial-temporal attention model.<br/>
 For the stable convergence of spatial-temporal attention model, we take the following training steps:
 * Train ```Connection network``` and ```Spatial-level attention network``` jointly and get the spatial attention model.<br/>
-    sh train_resnet50_sp01_spatial.sh
+
+        sh train_resnet50_sp01_spatial.sh
 * Train ```Temporal-level attention network``` based on the obtained spatial attention model, with freezing the weights of ```Connection network``` and ```Spatial-level attention network```.
     Sample 10 frames for each video
     sh train_resnet50_sp01_spatial_temporal_frozen.sh
