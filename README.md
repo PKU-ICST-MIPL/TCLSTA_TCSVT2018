@@ -25,9 +25,11 @@ For the stable convergence of spatial-temporal attention model, we take the foll
 
         sh train_resnet50_sp01_spatial.sh
 * Train ```Temporal-level attention network``` based on the obtained spatial attention model, with freezing the weights of ```Connection network``` and ```Spatial-level attention network```.
-    Sample 10 frames for each video
-    sh train_resnet50_sp01_spatial_temporal_frozen.sh
+
+        Sample 10 frames for each video<br/>
+        sh train_resnet50_sp01_spatial_temporal_frozen.sh
 * Train the spatial-temporal attention model jointly based on the obtained model by the last step.
-    sh train_resnet50_sp01_spatial_temporal.sh
+
+        sh train_resnet50_sp01_spatial_temporal.sh
 2. The training of static-motion collaborative model.
 3. Testing.
